@@ -1,0 +1,6 @@
+@LimitManage.API_HostAddress = http://localhost:5197
+
+GET {{LimitManage.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
