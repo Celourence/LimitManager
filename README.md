@@ -32,7 +32,7 @@ Apesar de esta entidade fugir do escopo da API, a ideia é que estas informaçõ
 O cadastro de uma nova conta deverá usar a rota : ```POST /api/v1/account```
 
 
-![Diagrama de criação de conta](img/createaccountDiagram.png)
+![Diagrama de criação de conta](img/createAccountDiagram.png)
 ```json
 {
     "branchCode": "String", // Deve possuir 4 caracteres e não deve ser nulo
@@ -68,9 +68,10 @@ Contrado de saída
 ```
 
 #### Busca de conta
-A busca de informações de limite cadastrado deverá usar a rota ```GET /api/v1/account?{AccountId}```.
+Assim como o endpoint de criação de conta fugir do escopo da API para otimizar a utilização da API e facilitar para o avaliador foi adicionado o endpoint de criação de conta bancária.
+A busca de informações de conta cadastrada deverá usar a rota ```GET /api/v1/account?{AccountId}```.
 
-  ![Diagrama de busca de conta](img/searchaccountDiagram.png)
+  ![Diagrama de busca de conta](img/searchAccountDiagram.png)
   
 Contrado de saída
 ```json
