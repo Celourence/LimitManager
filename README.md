@@ -5,22 +5,22 @@ O banco KRT necessita de uma solução que permita o gerenciamento de limites da
 ## Dados de Negócio
 
 1. O analista de fraudes do Banco KRT deve ser capaz de cadastrar no banco de dados as informações referentes à gestão de limite: documento, número da agência, número da conta e o limite para transações PIX:
-   ![Cadastrar Limite](img\createLimit.jpg)
+   ![Cadastrar Limite](img/createLimit.jpg)
 
 2. O analista de fraudes do Banco KRT deve ser capaz de buscar as informações de limite para uma conta já cadastrada:
-    ![Buscar Limite](img\searchLimit.jpg)
+    ![Buscar Limite](img/searchLimit.jpg)
 
 3. O analista de fraudes do Banco KRT deve ser capaz de alterar o limite para transações PIX de uma conta já cadastrada:
-   ![Atualizar Limite](img\updateLimit.jpg)
+   ![Atualizar Limite](img/updateLimit.jpg)
 
 4. O analista de fraudes do Banco KRT deve ser capaz de remover um registro do banco de dados de limite:
-   ![Atualizar Limite](img\updateLimit.jpg)
+   ![Atualizar Limite](img/updateLimit.jpg)
 
 5. As transações de PIX devem passar pelo sistema de gestão de limites, que irá conferir se o valor da transação está dentro do limite disponível para o cliente.
 
 - Caso o limite seja menor que o valor transacionado, a transação precisa ser negada e não há consumo de limite.
 - Caso o cliente possua limite para a transação, a mesma deve ser aprovada e o seu valor deve ser descontado do saldo da conta existente.
-  ![Validar Transação](img\validatePixTransactionLimit.jpg)
+  ![Validar Transação](img/validatePixTransactionLimit.jpg)
 
 ## Dados técnicos
 ### Diagramas de sequência de implementação das funcionalidades
@@ -32,7 +32,7 @@ Apesar de esta entidade fugir do escopo da API, a ideia é que estas informaçõ
 O cadastro de uma nova conta deverá usar a rota : ```POST /api/v1/account```
 
 
-![Diagrama de criação de conta](img\createaccountDiagram.png)
+![Diagrama de criação de conta](img/createaccountDiagram.png)
 ```json
 {
     "branchCode": "String", // Deve possuir 4 caracteres e não deve ser nulo
@@ -70,7 +70,7 @@ Contrado de saída
 #### Busca de conta
 A busca de informações de limite cadastrado deverá usar a rota ```GET /api/v1/account?{AccountId}```.
 
-  ![Diagrama de busca de conta](img\searchaccountDiagram.png)
+  ![Diagrama de busca de conta](img/searchaccountDiagram.png)
   
 Contrado de saída
 ```json
@@ -95,7 +95,7 @@ Contrado de saída
 
 O cadastro de um novo limite deverá usar a rota ```POST /api/v1/limit```.
 
-![Diagrama de criação de limite](img\createLimitDiagram.png)
+![Diagrama de criação de limite](img/createLimitDiagram.png)
 
 Contrato de entrada
 ```json
@@ -123,7 +123,7 @@ Contrado de saída
 #### Busca de informações de limite
 A busca de informações de limite cadastrado deverá usar a rota ```GET /api/v1/limit?{AccountId}```.
 
-  ![Diagrama de busca de limite](img\searchLimitDiagram.png)
+  ![Diagrama de busca de limite](img/searchLimitDiagram.png)
   
 Contrado de saída
 ```json
@@ -141,7 +141,7 @@ Contrado de saída
 #### Alterar limite
 A busca de informações de limite cadastrado deverá usar a rota ```PUT /api/v1/limit?{AccountId}```
 
-  ![Diagrama de alteração de limite](img\updateLimitDiagram.png)
+  ![Diagrama de alteração de limite](img/updateLimitDiagram.png)
   
 Contrato de entrada
   
@@ -172,12 +172,12 @@ Contrado de saída
 
 A remoção de limite cadastrado deverá usar a rota ```DELETE /api/v1/limit?{AccountId}```
 
-  ![Diagrama de remoção de limite](img\deleteLimitDiagram.png)
+  ![Diagrama de remoção de limite](img/deleteLimitDiagram.png)
 
 #### Validação de transação pix
 A validação de transação pix deverá usar a rota ```POST /api/v1/transaction/validate```
 
-  ![Diagrama de remoção de limite](img\validatePixTransactionLimitDiagram.png)
+  ![Diagrama de remoção de limite](img/validatePixTransactionLimitDiagram.png)
 
 Contrato de entrada
 ```json
